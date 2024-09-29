@@ -1,0 +1,314 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Underdog, cursive;
+}
+
+.characters {
+  display: flex;
+  height: 100vh;
+  background-image: url(images/how-to-train-your-dragon-2.jpg);
+}
+
+.menu {
+  width: 200px;
+  position: relative;
+}
+
+.container {
+  flex-grow: 1;
+  position: relative;
+}
+
+.fab {
+  position: absolute;
+  left: 30px;
+  bottom: 30px;
+}
+
+.fab-buttons__item {
+  width: 74px;
+  height: 74px;
+  list-style: none;
+  margin-bottom: 10px;
+  border-radius: 50%;
+  border: 2px solid black;
+}
+
+.fab-action-button {
+  width: 74px;
+  height: 74px;
+  background-color: #29b6f6;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 26px;
+  padding-top: 20px;
+}
+
+.character {
+  width: 800px;
+  height: 500px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -250px;
+  margin-left: -400px;
+  background: #fff1e8;
+  box-shadow: 3px 3px 7px black;
+}
+
+.character img {
+  float: left;
+  padding: 30px 15px;
+}
+
+.character h2 {
+  margin: 30px;
+}
+
+/*  */
+
+.about-dragons {
+  height: 100vh;
+  background-image: url(images/19200626.jpg);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+}
+
+.accordion {
+  border: 2px solid #6b537c;
+  width: 800px;
+  margin: 0 auto;
+  background-image: linear-gradient(to bottom right, #eafc83 0%, #9fc6f5 60%, #3366ff 85%, #1f3e9c 100%);
+}
+
+.accordion ul {
+  list-style: none;
+}
+
+.accordion ul li {
+  position: relative;
+}
+
+.accordion-header {
+  height: 80px;
+  padding: 10px 25px;
+  cursor: pointer;
+  background: #6b5373;
+  display: flex;
+  align-items: center;
+  border-top: 1px solid #9775af;
+  border-bottom: 1px solid #4f3d5b;
+}
+
+.accordion-header h2 {
+  font-size: 30px;
+  color: #f4f4f4;
+  padding-left: 20px;
+}
+
+.accordion-header img {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  border: 2px solid #db6e5e;
+}
+
+.accordion-body {
+  max-height: 0;
+  opacity: 0;
+  transform: translate(0, 50%);
+  overflow: hidden;
+  transition: all 0.5s ease-in-out;
+}
+
+.accordion ul li input:checked ~ div.accordion-body {
+  max-height: 800px;
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+.accordion ul li input {
+  position: absolute;
+  cursor: pointer;
+  width: 100%;
+  height: 80px;
+  opacity: 0;
+}
+
+/*  */
+
+.about_film {
+	height: 100vh;
+	display: flex;
+	background-image: url(images/How-To-Train-Your-Dragon-Header-e1687293096422.png);
+	background-size: cover;
+}
+
+.about_film input {
+	display: none;
+}
+
+.about_film label {
+	display: block;
+	box-shadow: 2px 0 8px 2px black, -2px 0 5px 1px white;
+	cursor: pointer;
+}
+
+.about_film label img {
+	height: 100vh;
+} 
+
+.about_film div {
+	overflow: hidden;
+	width: 0;
+	background-color: rgba(209, 238, 255, 0.8);
+	transition: width .5s;
+}
+
+.about_film div img {
+	padding: 30px;
+}
+
+.about_film div p {
+	padding: 50px;
+	font-size: 24px;
+}
+
+#data1:checked ~ div:nth-of-type(1) {
+	width: 100%;
+}
+
+#data2:checked ~ div:nth-of-type(2) {
+	width: 100%;
+}
+
+#data3:checked ~ div:nth-of-type(3) {
+	width: 100%;
+}
+
+#data4:checked ~ div:nth-of-type(4) {
+	width: 100%;
+}
+
+#data5:checked ~ div:nth-of-type(5) {
+	width: 100%;
+}
+
+div:nth-of-type(2) img,
+div:nth-of-type(4) img {
+	float: left;
+}
+
+div:nth-of-type(1) img,
+div:nth-of-type(3) img,
+div:nth-of-type(5) img {
+	float: right;
+}
+
+
+header {
+	height: 100vh;
+	background-image: url(images/618502.jpg);
+	background-size: cover;
+	position: relative;
+	box-shadow: 2px 0 8px 2px black, -2px 0 5px 1px white;
+}
+
+nav {
+	position: absolute;
+	top: 15px;
+	left: 15px;
+}
+
+nav ul {
+	display: flex;
+}
+
+nav li a {
+	text-decoration: none;
+	color: #63c0ff;
+	display: block;
+	position: relative;
+	z-index: 2;
+	transition: color .3s .3s linear;
+}
+
+nav li {
+	list-style: none;
+	margin: 20px 40px;
+	font-size: 24px;
+	position: relative;
+}
+
+nav li:before {
+	content: "";
+	display: block;
+	width: 100%;
+	height: 0;
+	background-color: #63c0ff;
+	position: absolute;
+	top: 0;
+	right: 0;
+	transform-origin: left center;
+	transition: height .3s linear;
+	z-index: 1;
+}
+
+nav li:after {
+	content: "";
+	display: block;
+	width: 0;
+	height: 120%;
+	position: absolute;
+	top: 50%;
+	right: 50%;
+	z-index: 1;
+	transform: translate(50%, -50%);
+	border-top: 2px solid #63c0ff;
+	border-bottom: 2px solid #63c0ff;
+	transition: width .3s linear;
+}
+
+nav li:hover:after {
+	width: 100%;
+}
+
+nav li:hover:before {
+	height: 100%;
+}
+
+header li:hover a {
+	color: black;
+}
+
+.text-back {
+	position: absolute;
+	bottom: 50px;
+	right: 100px;
+	font-size: 70px;
+	line-height: 1;
+	color: #63c0ff;
+	background-image: url(images/How-To-Train-Your-Dragon-Header-e1687293096422.png);
+	background-size: cover;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.text-front {
+	position: absolute;
+	bottom: 50px;
+	right: 100px;
+	font-size: 70px;
+	line-height: 1;
+	color: #63c0ff;
+	mix-blend-mode: color;
+}
+
+header span {
+	font-size: 100px;
+}
+
