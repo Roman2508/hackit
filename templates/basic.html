@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html><!-- початок html сторінки -->
+	<head>
+		<!-- Тут важлива інформація для відображення html сторінки -->
+		<title>Rediscover the world</title>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="../static/css/style.css">
+	</head>
+	<body>
+		<header>
+        	<nav>
+            	<ul class="menu" >
+                	<li><a href="/">MAIN</a></li>
+                	<li><a href="/Articles">INTERESTING PLACES</a></li>
+           		 </ul>
+        	</nav>
+			<div class="welcom_user">
+				{%block welcom%}
+                {%endblock%}
+			</div>
+   		 </header>
+
+		<main>
+			{%block main%}
+            {%endblock%}
+		</main>
+
+		<footer>
+			<p>Copyright © 1999-2020 Ctrip.com (Hong Kong) Limited. All rights reserved.<br>
+			Site Operator: Ctrip.com (Hong Kong) Limited<br>
+			Hong Kong Travel License No. 352367</p>
+		</footer>
+	</body>
+</html>

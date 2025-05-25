@@ -1,0 +1,27 @@
+{%extends "basic.html"%}
+
+{%block main%}
+
+<section class="logo_articles">
+    <h1>Discover something new</h1>
+</section>
+
+<section>
+    <h2>Open new City</h2>
+    {%for article in articles%}
+        <div class="container">
+            <div class="post_img"><img src="{{ article.post_image }}"></div>
+            <div class="article_text">
+                <div>
+                    <h3>{{ article.post_name }}</h3>
+                    <p class="details">{{ article.continent }}</p>
+                    <p class="text">{{ article.post_text }}</p>
+                </div>
+                <div  class="post_text_link"><a href="/post_details/{{ article.id }}">More details</a></div>
+            </div>
+
+        </div>
+    {%endfor%}
+</section>
+
+{%endblock%}
