@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block main %}
+    <main>
+      <div class="admin-page container">
+        <div class="admin-tabs">
+          <div class="admin-tour-tab active">Додати тур</div>
+          <div class="admin-country-tab">Додати країну</div>
+        </div>
+
+        <div class="admin-forms">
+          <form action="/create-tour" method="post" class="tour-form active">
+            <input name="name" type="text" placeholder="Назва туру" />
+            <input name="country" type="text" placeholder="Країна" />
+            <input name="city" type="text" placeholder="Місто" />
+            <input name="nights" type="number" placeholder="Кількість ночей" />
+            <select name="room_type">
+              <option value="Anex Standard Room With Balcony">Anex Standard Room With Balcony</option>
+              <option value="Main Building Deluxe Room Sea View">Main Building Deluxe Room Sea View</option>
+              <option value="Anex Family Room Without Balcony">Anex Family Room Without Balcony</option>
+              <option value="Main Building Superior Room Pool View">Main Building Superior Room Pool View</option>
+            </select>
+            <input name="price" type="number" placeholder="Ціна" />
+            <input name="departure" type="date" placeholder="Виліт" />
+            <input name="arrival" type="date" placeholder="Приліт" />
+
+            <button type="submit" class="button-secondary">ЗБЕРЕГТИ</button>
+          </form>
+
+          <form action="/create-country" method="post" class="country-form">
+            <input name="name" type="text" placeholder="Назва" />
+            <input name="photo_url" type="text" placeholder="Фото" />
+            <input name="flag_url" type="text" placeholder="Прапор" />
+
+            <select name="continent">
+              <option value="Євразія">Євразія</option>
+              <option value="Північна америка">Північна америка</option>
+              <option value="Південна америка">Південна америка</option>
+              <option value="Австралія">Австралія</option>
+              <option value="Африка">Африка</option>
+            </select>
+
+            <button type="submit" class="button-secondary">ЗБЕРЕГТИ</button>
+          </form>
+        </div>
+      </div>
+    </main>
+{% endblock %}

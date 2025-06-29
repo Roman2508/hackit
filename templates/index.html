@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block main %}
+    <main>
+      <div class="banner">
+        <div class="banner-content">
+          <h1>400+млн. актуальних турів</h1>
+          <p>Порівнюйте одразу сотні туристичних сайтів</p>
+          <p>Швидше знаходьте кращі пропозиції</p>
+        </div>
+
+        <button class="button search-button">розпочни пошук</button>
+      </div>
+
+      <div class="advantages">
+        <div class="advantages-item">
+          <div class="advantages-item-left">
+            <img src="../static/images/monitor.svg" />
+          </div>
+
+          <div class="advantages-item-right">
+            <h4>Зручно</h4>
+            <p>Не потрібно використовувати десятки сайтів туроператорів</p>
+          </div>
+        </div>
+
+        <div class="advantages-item">
+          <div class="advantages-item-left">
+            <img src="../static/images/credit-card.svg" />
+          </div>
+
+          <div class="advantages-item-right">
+            <h4>Вигідно</h4>
+            <p>Прайс агрегатор підбере кращу пропозицію</p>
+          </div>
+        </div>
+
+        <div class="advantages-item">
+          <div class="advantages-item-left">
+            <img src="../static/images/lock.svg" />
+          </div>
+
+          <div class="advantages-item-right">
+            <h4>Надійно</h4>
+            <p>Топова турагенція Західної України з 8 річним досвідом</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="countries">
+
+          {% for country in countries %}
+          <div class="country" style="background-image: url({{ country.photo_url }})">
+            <div class="country-content">
+              <p>{{country.name}}</p>
+              <img src="{{ country.flag_url }}" />
+            </div>
+          </div>
+          {% endfor %}
+
+        </div>
+      </div>
+    </main>
+{% endblock %}
