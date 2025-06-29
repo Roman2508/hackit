@@ -1,0 +1,62 @@
+const movies = [
+  {
+    name: "The Shawshank Redemption",
+    year: 1994,
+    rating: 9.3,
+    poster: "https://m.media-amazon.com/images/I/81nCz4b6DLL._AC_SY679_.jpg"
+  },
+  {
+    name: "The Godfather",
+    year: 1972,
+    rating: 9.2,
+    poster: "https://m.media-amazon.com/images/I/71xZLPeQfrL._AC_SY679_.jpg"
+  },
+  {
+    name: "The Dark Knight",
+    year: 2008,
+    rating: 9.0,
+    poster: "https://m.media-amazon.com/images/I/51K8ouYrHeL._AC_.jpg"
+  },
+  {
+    name: "12 Angry Men",
+    year: 1957,
+    rating: 9.0,
+    poster: "https://m.media-amazon.com/images/I/71od3K39xXL._AC_SY679_.jpg"
+  },
+  {
+    name: "Schindler's List",
+    year: 1993,
+    rating: 8.9,
+    poster: "https://m.media-amazon.com/images/I/51aKZ2BzV-L._AC_.jpg"
+  },
+  {
+    name: "Pulp Fiction",
+    year: 1994,
+    rating: 8.9,
+    poster: "https://m.media-amazon.com/images/I/51V5ZpFyaFL._AC_.jpg"
+  },
+  {
+    name: "The Lord of the Rings: The Return of the King",
+    year: 2003,
+    rating: 8.9,
+    poster: "https://m.media-amazon.com/images/I/51Qvs9i5a%2BL._AC_.jpg"
+  },
+  {
+    name: "The Good, the Bad and the Ugly",
+    year: 1966,
+    rating: 8.8,
+    poster: "https://m.media-amazon.com/images/I/71mZKwUtxML._AC_SY679_.jpg"
+  },
+  {
+    name: "Fight Club",
+    year: 1999,
+    rating: 8.8,
+    poster: "https://m.media-amazon.com/images/I/51v5ZpFyaFL._AC_.jpg"
+  },
+  {
+    name: "Forrest Gump",
+    year: 1994,
+    rating: 8.8,
+    poster: "https://m.media-amazon.com/images/I/61+7MeylceL._AC_SY679_.jpg"
+  }
+];
