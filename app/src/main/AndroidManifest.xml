@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+package="com.example.firstlessonjava">
+
+
+<application
+    android:allowBackup="true"
+    android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+    android:icon="@mipmap/ic_launcher"
+    android:label="TodoApp">
+
+
+    <activity android:name="com.example.firstlessonjava.TaskDetailsActivity" />
+    <activity android:name="com.example.firstlessonjava.TaskListActivity" />
+    <activity android:name="com.example.firstlessonjava.MainActivity" android:exported="true">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+    </activity>
+</application>
+</manifest>
