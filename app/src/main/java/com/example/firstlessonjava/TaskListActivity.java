@@ -45,7 +45,8 @@ public class TaskListActivity extends AppCompatActivity {
         );
         filterSpinner.setAdapter(arr);
 
-        adapter = new TodoAdapter(this, DataStore.getTasksByCategory(category), t -> openDetails(t));
+//        adapter = new TodoAdapter(this, DataStore.getTasksByCategory(category), t -> openDetails(t));
+        adapter = new TodoAdapter(this, DataStore.getTasksByCategory(category), task -> openDetails(task));
         recyclerView.setAdapter(adapter);
 
         filterSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {

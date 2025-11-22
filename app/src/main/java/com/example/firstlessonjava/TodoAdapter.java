@@ -1,54 +1,83 @@
 package com.example.firstlessonjava;
 
+import android.content.Context;
+import android.content.res.ColorStateList;
+import android.graphics.Paint;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
+import java.util.function.Consumer;
 
-public class TodoAdapter extends RecyclerView.Adapter<TodoAdapter.VH> {
 
-    public interface Listener { void onClick(Task t); }
+public class TodoAdapter extends RecyclerView.Adapter<TodoAdapter.ViewHolder> {
 
-    private List<Task> items;
-    private Listener listener;
+    private final Context context;
+    private List<Task> tasks;
+    private final Consumer<Task> onClickListener;
 
-    public TodoAdapter(android.content.Context ctx, List<Task> list, Listener l) {
-        this.items = list;
-        this.listener = l;
+    public TodoAdapter(Context context, List<Task> tasks, Consumer<Task> onClickListener) {
+        this.context = context;
+        this.tasks = tasks;
+        this.onClickListener = onClickListener;
     }
 
-    public void update(List<Task> list) {
-        this.items = list;
+    public void update(List<Task> newTasks) {
+        this.tasks = newTasks;
         notifyDataSetChanged();
     }
 
     @NonNull
     @Override
-    public VH onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(android.R.layout.simple_list_item_1, parent, false);
-        return new VH(v);
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(context).inflate(R.layout.item_task, parent, false);
+        return new ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull VH h, int pos) {
-        Task t = items.get(pos);
-        h.text.setText(t.title);
-        h.itemView.setOnClickListener(v -> listener.onClick(t));
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        Task task = tasks.get(position);
+        holder.tvTitle.setText(task.title);
+
+        if (task.done) {
+            holder.ivStatus.setImageResource(R.drawable.ic_task_done);
+            holder.ivStatus.setImageTintList(ColorStateList.valueOf(
+                    ContextCompat.getColor(context, R.color.task_status_done)));
+
+            holder.tvTitle.setPaintFlags(holder.tvTitle.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+            holder.tvTitle.setAlpha(0.6f);
+        } else {
+            holder.ivStatus.setImageResource(R.drawable.ic_task_undone);
+            holder.ivStatus.setImageTintList(ColorStateList.valueOf(
+                    ContextCompat.getColor(context, R.color.task_status_tint)));
+
+            holder.tvTitle.setPaintFlags(holder.tvTitle.getPaintFlags() & ~Paint.STRIKE_THRU_TEXT_FLAG);
+            holder.tvTitle.setAlpha(1.0f);
+        }
+
+        holder.itemView.findViewById(R.id.item_task_clickable_root).setOnClickListener(v -> onClickListener.accept(task));
     }
 
     @Override
-    public int getItemCount() { return items.size(); }
+    public int getItemCount() {
+        return tasks.size();
+    }
 
-    static class VH extends RecyclerView.ViewHolder {
-        TextView text;
-        VH(View item) {
-            super(item);
-            text = item.findViewById(android.R.id.text1);
+    static class ViewHolder extends RecyclerView.ViewHolder {
+        ImageView ivStatus;
+        TextView tvTitle;
+
+        ViewHolder(View itemView) {
+            super(itemView);
+            ivStatus = itemView.findViewById(R.id.ivStatus);
+            tvTitle = itemView.findViewById(R.id.tvTitle);
         }
     }
 }
