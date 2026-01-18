@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Photo Keeper</title>
+    <link rel="stylesheet" href="../static/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="main-menu-container">
+        <div class="menu-trigger">
+          <div class="menu-trigger-lines"></div>
+        </div>
+
+        <nav class="main-menu">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Favorites</a></li>
+            <li><a href="#">Settings</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="header-content-container">
+        <h1>Photo Keeper</h1>
+        <div>
+          <form action="http://127.0.0.1:5000/upload/photo" , autocomplete="off" class="uploadForm">
+            <div>
+              <input type="file" name="file" id="inputUploadFile" class="hidden" />
+              <label for="inputUploadFile"><img src="../static/img/camara.png" class="camera-button" /></label>
+            </div>
+
+            <div class="uploadImageOverlay hidden">
+              <div class="uploadImageSettingsContainer">
+                <div class="uploadedImage">
+                  <img src="../static/img/photos/3.jpg" class="uploadImage" />
+                </div>
+
+                <div class="uploadEffectLevel">
+                  <input class="hidden" id="effectLevel" name="effectLevel" type="range" />
+                  <label for="effectLevel">
+                    <div class="effectLevelLine">
+                      <div class="effectLevelPin"></div>
+                      <div class="effectLevelProgressLine"></div>
+                    </div>
+                  </label>
+                </div>
+
+                <fieldset class="uploadEffectFieldset">
+                  <input type="radio" name="effect" id="uploadEffectNone" value="none" class="hidden" checked />
+                  <label class="uploadEffectLabel inputActive" for="uploadEffectNone">
+                    <div class="uploadEffectPreview"></div>
+                  </label>
+
+                  <input type="radio" name="effect" id="uploadEffectChrome" value="grayscale" class="hidden" checked />
+                  <label class="uploadEffectLabel" for="uploadEffectChrome">
+                    <div class="uploadEffectPreview effectChrome"></div>
+                  </label>
+
+                  <input type="radio" name="effect" id="uploadEffectSepia" value="sepia" class="hidden" checked />
+                  <label class="uploadEffectLabel" for="uploadEffectSepia">
+                    <div class="uploadEffectPreview effectSepia"></div>
+                  </label>
+
+                  <input type="radio" name="effect" id="uploadEffectMarvin" value="invert" class="hidden" checked />
+                  <label class="uploadEffectLabel" for="uploadEffectMarvin">
+                    <div class="uploadEffectPreview effectMarvin"></div>
+                  </label>
+
+                  <input type="radio" name="effect" id="uploadEffectPhobos" value="saturate" class="hidden" checked />
+                  <label class="uploadEffectLabel" for="uploadEffectPhobos">
+                    <div class="uploadEffectPreview effectPhobos"></div>
+                  </label>
+
+                  <input type="radio" name="effect" id="uploadEffectHeat" value="contrast" class="hidden" checked />
+                  <label class="uploadEffectLabel" for="uploadEffectHeat">
+                    <div class="uploadEffectPreview effectHeat"></div>
+                  </label>
+                </fieldset>
+
+                <div>
+                  <input class="uploadFormHashtags" name="hashtags" placeholder="#хеш-тег" />
+                  <textarea class="uploadFormDescription" name="description" placeholder="Ваш коментар..."></textarea>
+                </div>
+
+                <p class="uploadFormErrorMessage"></p>
+
+                <div>
+                  <button class="uploadFormButton active" type="reset" id="uploadCancel">ВІДМІНА</button>
+                  <button class="uploadFormButton" type="submit" id="uploadSubmit">ВІДПРАВИТИ</button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+        <p class="header-comment">Find something special</p>
+      </div>
+    </header>
+
+    <main>
+      <div class="pictureContainer"></div>
+
+      <div class="openedPictureContainer hidden">
+        <div class="openedPicture">
+          <img src="../static/img/close.png" class="closeButton" />
+          <img src="" alt="picture" class="openedPictureImg" />
+
+          <div class="openedPictureDescription">
+            <p class="descriptionText"></p>
+
+            <div class="pictureStatus">
+              <img src="../static/img/comment.png" alt="comment icon" />
+              <span class="pictureComments">10</span>
+
+              <img src="../static/img/heart_checked.png" alt="like icon" />
+              <span class="pictureLike">15</span>
+            </div>
+          </div>
+
+          <div class="pictureCommentsContainer"></div>
+
+          <form class="addCommentForm" id="addCommentForm">
+            <textarea name="comment" class="addCommentFormText" placeholder="Ваш коментар..."></textarea>
+            <div>
+              <img id="sendCommentButton" src="../static/img/paper-plane_active.png" alt="paper-plane" />
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <p>PhotoKeeper 2021</p>
+      <p>tel: 0 - 800 - 907 - 44</p>
+      <p>e-mail: info@photokeeper.com</p>
+    </footer>
+
+    <template id="templatePictureExample">
+      <div class="pictureExample">
+        <img src="../static/img/photos/0.jpg" alt="picture example" class="pictureImg" />
+
+        <div class="pictureStatus">
+          <img src="../static/img/comment.png" alt="comment icon" />
+          <span class="pictureComments">10</span>
+
+          <img src="../static/img/heart_checked.png" alt="like icon" />
+          <span class="pictureLike">15</span>
+        </div>
+      </div>
+    </template>
+
+    <template id="commentsTemplate">
+      <div class="commentBlock">
+        <p class="commentText"></p>
+        <p class="commentAuthor">Anonymous</p>
+      </div>
+    </template>
+
+    <script src="../static/index.js"></script>
+  </body>
+</html>
