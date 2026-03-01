@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body {% block bodyClass %} {% endblock %}>
+    <div class="layout hidden">
+      <div class="tours-modal">
+        <div class="tours-modal-header">
+          <div class="tours-modal-header-main">ЗМІНИТИ ПАРАМЕТРИ ПОШУКУ</div>
+          <div class="modal-close">&times;</div>
+        </div>
+
+        <div class="tours-modal-body">
+          {% for tour in all_tours %}
+          <div class="tour">
+            <img src="{{ tour.photo_url }}" />
+
+            <div class="tour-details">
+              <h5 class="tour-details-title">{{ tour.name }}</h5>
+              <p class="tour-details-location">{{ tour.city }}, {{ tour.country }}</p>
+              <div class="tour-details-departure">
+                Виліт <b>{{ tour.departure }}</b> <b>на {{ tour.nights }} ночей</b>
+              </div>
+              <div class="tour-details-number">Тип номера: <b>{{ tour.room_type }}</b></div>
+            </div>
+
+            <div class="tour-actions">
+              <div class="tour-actions-like">
+                <img src="../static/images/heart.svg" />
+              </div>
+              <div class="tour-actions-price">{{ tour.price }} &euro;</div>
+              <a href="/tour/{{ tour.id }}">
+                <button>ДЕТАЛІ ТУРУ</button>
+              </a>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+
+    <header {% if not is_home %} class="header" {% endif %}>
+      <a class="logo" href="/">
+        <img src="../static/images/logo.png" alt="logo" />
+      </a>
+
+      <div>
+        <ul>
+          <li><a href="/">Країни</a></li>
+          <li><a href="#" id="excursion-link">Екскурсійні тури</a></li>
+          <li><a href="/about">Про нас</a></li>
+          <li><a href="/admin">Адміністрування</a></li>
+        </ul>
+
+        <button>Контакти</button>
+      </div>
+    </header>
+
+    <main {% block mainClass %} {% endblock %}>{% block main %} {% endblock %}</main>
+
+    <footer class="main-footer">
+      <div class="footer-content">
+        <div class="footer-section">
+          <img src="../static/images/logo.png" alt="logo" class="footer-logo" />
+          <p>Найкращі тури по всьому світу від надійного оператора.</p>
+        </div>
+        <div class="footer-section">
+          <h4>Контакти</h4>
+          <p>Телефон: +38 (067) 000-00-00</p>
+          <p>Email: info@joinup.ua</p>
+          <p>Адреса: м. Львів, вул. Туристична, 1</p>
+        </div>
+        <div class="footer-section">
+          <h4>Соціальні мережі</h4>
+          <div class="social-links">
+            <a href="#">Facebook</a>
+            <a href="#">Instagram</a>
+            <a href="#">Telegram</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">Copyright &copy; Join UP! Всі права захищені 2026</div>
+    </footer>
+
+    <script src="../static/main.js"></script>
+  </body>
+</html>

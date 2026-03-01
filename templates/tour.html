@@ -1,0 +1,80 @@
+{% extends "base.html" %} {% block bodyClass %} class="tour-body" {% endblock %} {% block mainClass %}
+class="full-tour-container" {% endblock %} {% block main %}
+<section class="full-tour">
+  <div class="full-tour-left" style="background-image: url({{ tour.photo_url }})">
+    <div class="full-tour-left-text">
+      <h1>{{ tour.name }}</h1>
+      <p>{{ tour.city }}, {{ tour.country }}</p>
+    </div>
+
+    <button id="request-btn">ЗАЛИШИТИ ЗАПИТ</button>
+  </div>
+
+  <div class="full-tour-right">
+    <div class="full-tour-right-top">
+      <p>ID туру: {{ tour.id }}</p>
+      <span>Наявність місць уточнюйте</span>
+    </div>
+
+    <div class="full-tour-right-middle">
+      <p>{{ tour.price }} &euro;</p>
+      <img src="../static/images/heart.svg" />
+    </div>
+
+    <div class="full-tour-right-bottom">
+      <div class="">Виліт <b>{{ tour.departure }}</b> <b>на {{ tour.nights }} ночей</b></div>
+      <div class="">Тип номера: <b>{{ tour.room_type }}</b></div>
+    </div>
+  </div>
+</section>
+
+<section class="full-tour-tabs"></section>
+
+<section class="send-application">
+  <h3>ВІДПРАВИТИ ЗАПИТ</h3>
+
+  <form action="/create-application" method="post">
+    <div class="tour-form-top">
+      <div class="tour-form-fields">
+        <input name="phone" type="text" placeholder="+38 (xxx) xxx xx xx" />
+
+        <div class="tour-form-fields-row">
+          <input name="name" type="text" placeholder="Ваше ім'я" />
+          <input name="email" type="text" placeholder="E-mail" />
+        </div>
+
+        <textarea name="message" placeholder="Ваше повідомлення" rows="6"></textarea>
+      </div>
+
+      <div class="tour-form-description">
+        <h5>Зверніть увагу:</h5>
+
+        <ol>
+          <li>
+            У оператора з даного туру можливі доплати за вибір рейсу. оформлення страховки, святкові вечері в різдвяний
+            період.
+          </li>
+          <li>Ціна туру актуальна на момент перегляду даної сторінки.</li>
+          <li>Розрахунки проводяться в національній валюті по курсу туристичного оператора.</li>
+        </ol>
+
+        <b>
+          Для уточнення інформації зв'яжіться з нашим менеджером ми з'ясуємо всі деталі бронювання даної пропозиції.
+        </b>
+      </div>
+    </div>
+
+    <div class="tour-form-middle">
+      <label>
+        <input type="checkbox" />
+        <span>Даю згоду на збір, обробку і використання даних щодо моєї особи</span>
+      </label>
+    </div>
+
+    <div class="tour-form-bottom">
+      <button>ВІДПРАВИТИ ЗАПИТ</button>
+      <span>Відправлення запиту не зобов'язує вас бронювати та оплачувати цей тур</span>
+    </div>
+  </form>
+</section>
+{% endblock %}

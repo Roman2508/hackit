@@ -1,0 +1,76 @@
+{% extends "base.html" %} {% block bodyClass %} class="page-body" {% endblock %} {% block mainClass %}
+class="page-container" {% endblock %} {% block main %}
+<h1 class="admin-title">Сторінка адміністратора</h1>
+
+<div class="admin-tabs">
+  <button class="tab-btn active" data-tab="countries-tab">Країни</button>
+  <button class="tab-btn" data-tab="tours-tab">Тури</button>
+  <button class="tab-btn" data-tab="apps-tab">Заявки (Applications)</button>
+</div>
+
+<div id="countries-tab" class="admin-tab-content active">
+  <form class="country-form" action="/create-country" method="post">
+    <h2>Нова країна</h2>
+    <input name="name" type="text" placeholder="Назва" required />
+    <input name="photo_url" type="url" placeholder="Фото (URL)" required />
+    <input name="flag_url" type="url" placeholder="Прапор (URL)" required />
+    <select name="continent">
+      <option value="Євразія">Євразія</option>
+      <option value="Північна Америка">Північна Америка</option>
+      <option value="Південна Америка">Південна Америка</option>
+      <option value="Австралія">Австралія</option>
+      <option value="Африка">Африка</option>
+    </select>
+    <textarea name="description" placeholder="Опис" rows="6" required></textarea>
+    <button type="submit">СТВОРИТИ</button>
+  </form>
+</div>
+
+<div id="tours-tab" class="admin-tab-content">
+  <form class="country-form" action="/create-tour" method="post">
+    <h2>Новий Тур</h2>
+    <input name="name" type="text" placeholder="Назва туру" required />
+    <input name="price" type="number" placeholder="Вартість" required />
+    <input name="country" type="text" placeholder="Назва країни" required />
+    <input name="city" type="text" placeholder="Назва міста" required />
+    <input name="departure" type="date" placeholder="Дата вильоту" required />
+    <input name="nights" type="number" placeholder="Кількість ночей" required />
+    <input name="room_type" type="text" placeholder="Тип номера" required />
+    <input name="photo_url" type="url" placeholder="Фото (URL)" required />
+    <button type="submit">СТВОРИТИ</button>
+  </form>
+</div>
+
+<div id="apps-tab" class="admin-tab-content">
+  <div class="applications-list">
+    <h2>Всі заявки на бронювання</h2>
+    {% if applications %}
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Ім'я</th>
+          <th>Телефон</th>
+          <th>Email</th>
+          <th>Повідомлення</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for app in applications %}
+        <tr>
+          <td>{{ app.id }}</td>
+          <td>{{ app.name }}</td>
+          <td>{{ app.phone }}</td>
+          <td>{{ app.email }}</td>
+          <td>{{ app.message }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    {% else %}
+    <p>Заявок поки немає.</p>
+    {% endif %}
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends "base.html" %} {% block bodyClass %} class="page-body" {% endblock %} {% block mainClass %}
+class="page-container" {% endblock %} {% block main %}
+<section class="country-detail">
+  <div class="country-header" style="background-image: url({{ country.photo_url }})">
+    <div class="country-header-content">
+      <div class="country-title-row">
+        <h1>{{ country.name }}</h1>
+        <img src="{{ country.flag_url }}" alt="{{ country.name }} flag" class="country-flag-large" />
+      </div>
+      <p class="country-continent">{{ country.continent }}</p>
+    </div>
+  </div>
+
+  <div class="country-info">
+    <h3>Про країну</h3>
+    <p>{{ country.description }}</p>
+  </div>
+</section>
+{% endblock %}
