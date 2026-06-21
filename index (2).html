@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JoinUP! — 400+млн. актуальних турів</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --text-dark:#283643;
+    --text-gray:#6b7785;
+    --accent-blue:#2f80c4;
+    --teal:#1f8fa6;
+    --teal-dark:#187786;
+    --gold:#f3df54;
+    --bg-light:#f6f8f9;
+    --radius:6px;
+    --shadow:0 6px 18px rgba(20,40,60,0.12);
+  }
+
+  *{ margin:0; padding:0; box-sizing:border-box; }
+
+  body{
+    font-family:'Open Sans', Arial, sans-serif;
+    color:var(--text-dark);
+    background:var(--bg-light);
+    line-height:1.5;
+  }
+
+  h1,h2,h3,.logo-main{ font-family:'Montserrat', Arial, sans-serif; }
+
+  .container{
+    max-width:1180px;
+    margin:0 auto;
+    padding:0 24px;
+  }
+
+  /* ===== HEADER ===== */
+  .site-header{
+    background:#ffffff;
+    box-shadow:0 2px 10px rgba(20,40,60,0.08);
+    position:sticky;
+    top:0;
+    z-index:100;
+  }
+
+  .header-inner{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:16px;
+    padding:14px 24px;
+  }
+
+  .logo{ display:flex; flex-direction:column; line-height:1.1; }
+
+  .logo-main{
+    font-size:24px;
+    font-weight:800;
+    color:var(--text-dark);
+    letter-spacing:0.5px;
+  }
+
+  .logo-main .accent{ color:var(--accent-blue); }
+
+  .logo-sub{
+    font-size:11px;
+    color:var(--text-gray);
+    text-transform:lowercase;
+    letter-spacing:0.5px;
+  }
+
+  .main-nav{
+    display:flex;
+    align-items:center;
+    gap:28px;
+    flex-wrap:wrap;
+  }
+
+  .main-nav a{
+    text-decoration:none;
+    color:var(--text-dark);
+    font-size:15px;
+    font-weight:500;
+    transition:color 0.2s ease;
+  }
+
+  .main-nav a:hover{ color:var(--accent-blue); }
+
+  .main-nav .nav-btn{
+    background:var(--accent-blue);
+    color:#fff;
+    padding:10px 22px;
+    border-radius:4px;
+    transition:background 0.2s ease;
+  }
+
+  .main-nav .nav-btn:hover{ background:var(--teal-dark); color:#fff; }
+
+  .lang-switch{ display:flex; gap:10px; font-size:20px; }
+  .lang-switch span{ cursor:pointer; opacity:0.85; transition:opacity 0.2s ease; }
+  .lang-switch span:hover{ opacity:1; }
+
+  /* ===== HERO ===== */
+  .hero{
+    background:
+      linear-gradient(180deg, rgba(20,35,55,0.45) 0%, rgba(20,35,55,0.55) 100%),
+      url('https://loremflickr.com/1600/520/tropicalresort,relax,vacation') center/cover no-repeat;
+    color:#fff;
+    text-align:center;
+    padding:90px 24px 70px;
+  }
+
+  .hero h1{
+    font-size:42px;
+    font-weight:800;
+    margin-bottom:14px;
+    text-shadow:0 2px 10px rgba(0,0,0,0.25);
+  }
+
+  .hero p{
+    font-size:17px;
+    font-weight:500;
+    margin-bottom:4px;
+    text-shadow:0 1px 6px rgba(0,0,0,0.25);
+  }
+
+  .hero-btn{
+    margin-top:32px;
+    background:#ffffff;
+    color:var(--text-dark);
+    border:none;
+    padding:16px 42px;
+    font-size:15px;
+    font-weight:700;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    border-radius:30px;
+    cursor:pointer;
+    box-shadow:var(--shadow);
+    transition:transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .hero-link{
+    display:inline-block;
+    text-decoration:none;
+    margin-left:12px;
+    background:var(--gold);
+  }
+
+  .hero-btn:hover{
+    transform:translateY(-2px);
+    box-shadow:0 10px 24px rgba(20,40,60,0.22);
+  }
+
+  /* ===== FEATURES ===== */
+  .features{
+    background:var(--teal);
+  }
+
+  .features-inner{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:36px;
+    padding:36px 24px;
+  }
+
+  .feature{
+    display:flex;
+    align-items:flex-start;
+    gap:18px;
+  }
+
+  .feature-icon{
+    flex:0 0 auto;
+    width:48px;
+    height:48px;
+    border:2px solid rgba(255,255,255,0.85);
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#fff;
+  }
+
+  .feature-icon svg{ width:24px; height:24px; }
+
+  .feature h3{
+    font-size:17px;
+    font-weight:700;
+    color:#fff;
+    margin-bottom:4px;
+  }
+
+  .feature p{
+    font-size:13.5px;
+    color:rgba(255,255,255,0.9);
+    line-height:1.45;
+  }
+
+  /* ===== COUNTRIES ===== */
+  .countries{
+    background:var(--bg-light);
+    border-top:4px solid var(--gold);
+    padding:40px 24px 60px;
+  }
+
+  .countries-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:18px;
+    max-width:1180px;
+    margin:0 auto;
+  }
+
+  .country-card{
+    position:relative;
+    height:170px;
+    border-radius:var(--radius);
+    overflow:hidden;
+    cursor:pointer;
+    box-shadow:var(--shadow);
+    opacity:0;
+    transform:translateY(14px);
+    animation:fadeUp 0.5s ease forwards;
+    transition:transform 0.25s ease;
+  }
+
+  .country-card:hover{ transform:scale(1.02); }
+
+  .country-card:hover .country-img{ transform:scale(1.08); }
+
+  .country-img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+    transition:transform 0.4s ease;
+  }
+
+  .country-overlay{
+    position:absolute;
+    left:0; right:0; bottom:0;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:10px 14px;
+    background:linear-gradient(180deg, rgba(20,30,45,0) 0%, rgba(20,30,45,0.75) 100%);
+  }
+
+  .country-name{
+    color:#fff;
+    font-weight:700;
+    font-size:15px;
+    text-shadow:0 1px 4px rgba(0,0,0,0.4);
+  }
+
+  .country-flag{ font-size:20px; line-height:1; }
+
+  @keyframes fadeUp{
+    to{ opacity:1; transform:translateY(0); }
+  }
+
+  /* ===== MODAL ===== */
+  .modal-overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(15,25,40,0.55);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    opacity:0;
+    visibility:hidden;
+    transition:opacity 0.25s ease;
+    z-index:200;
+    padding:20px;
+  }
+
+  .modal-overlay.active{ opacity:1; visibility:visible; }
+
+  .modal-box{
+    background:#fff;
+    border-radius:var(--radius);
+    max-width:480px;
+    width:100%;
+    overflow:hidden;
+    transform:translateY(20px);
+    transition:transform 0.25s ease;
+    box-shadow:0 20px 50px rgba(0,0,0,0.25);
+  }
+
+  .modal-overlay.active .modal-box{ transform:translateY(0); }
+
+  .modal-box img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+    display:block;
+  }
+
+  .modal-body{ padding:20px 24px 26px; position:relative; }
+
+  .modal-body h2{ font-size:21px; margin-bottom:10px; }
+
+  .modal-body p{ font-size:14.5px; color:var(--text-gray); }
+
+  .modal-close{
+    position:absolute;
+    top:12px; right:12px;
+    width:34px; height:34px;
+    border:none;
+    border-radius:50%;
+    background:rgba(255,255,255,0.85);
+    color:var(--text-dark);
+    font-size:20px;
+    line-height:1;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    transition:background 0.2s ease;
+  }
+
+  .modal-close:hover{ background:#fff; }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width:900px){
+    .features-inner{ grid-template-columns:1fr; gap:24px; }
+    .countries-grid{ grid-template-columns:repeat(2, 1fr); }
+    .hero h1{ font-size:30px; }
+  }
+
+  @media (max-width:560px){
+    .countries-grid{ grid-template-columns:1fr; }
+    .main-nav{ gap:14px; }
+    .main-nav a{ font-size:13px; }
+    .hero{ padding:60px 16px 50px; }
+  }
+
+
+  /* ===== COUNTRIES DROPDOWN ===== */
+  .nav-dropdown{position:relative;padding:18px 0;margin:-18px 0}
+  .nav-trigger{display:inline-flex;align-items:center;gap:6px;cursor:pointer}
+  .nav-trigger::after{content:"▾";font-size:11px;color:var(--text-gray)}
+  .countries-menu{
+    position:absolute;top:100%;left:50%;transform:translateX(-50%);
+    width:min(920px, calc(100vw - 40px));background:#fff;border:1px solid #e5ebf0;
+    box-shadow:0 18px 45px rgba(25,45,70,.18);padding:26px 28px;display:none;z-index:150;
+    grid-template-columns:250px 1fr;gap:34px;min-height:320px
+  }
+  .nav-dropdown:hover .countries-menu{display:grid}
+  .countries-list{columns:2;column-gap:28px;list-style:none;max-height:270px;overflow:auto;padding-right:12px;border-right:3px solid #56616e}
+  .countries-list li{break-inside:avoid;margin-bottom:9px}
+  .country-link{font-size:14px;text-transform:uppercase;color:#4d5966!important;text-decoration:none;display:block;padding:2px 0}
+  .country-link:hover{color:var(--accent-blue)!important;font-weight:700}
+  .map-side{position:relative;min-height:260px;background:radial-gradient(circle at 62% 45%, rgba(47,128,196,.08), transparent 32%), url('https://upload.wikimedia.org/wikipedia/commons/8/80/World_map_-_low_resolution.svg') center/contain no-repeat;opacity:.9}
+  .region{position:absolute;font-size:14px;color:#5f6872;font-weight:600}
+  .region.europe{top:28px;left:48%;color:var(--accent-blue)}
+  .region.na{top:58px;left:16%}.region.caribbean{top:115px;left:23%}.region.sa{bottom:52px;left:29%}.region.africa{top:120px;left:52%}.region.asia{top:92px;right:20%}.region.indian{bottom:52px;right:19%}.region.au{bottom:22px;right:8%}
+  .country-info{display:none;position:absolute;left:0;right:0;bottom:0;background:rgba(255,255,255,.92);border-left:4px solid var(--accent-blue);padding:12px 14px;box-shadow:0 8px 24px rgba(20,40,60,.12);font-size:13px;color:var(--text-gray)}
+  .country-info b{display:block;color:var(--text-dark);font-size:15px;margin-bottom:4px}
+  .countries-list li:hover .country-info{display:block}
+
+  /* ===== FOOTER ===== */
+  .site-footer{background:#fff;border-top:1px solid #e2e8ee;margin-top:0}
+  .footer-inner{max-width:1180px;margin:0 auto;padding:34px 24px 22px}
+  .footer-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:34px;align-items:start}
+  .footer-col a,.footer-col p{display:block;color:#4f5d6b;text-decoration:none;font-size:14px;margin:5px 0}
+  .footer-col a:hover{color:var(--accent-blue)}
+  .footer-title{font-weight:800;color:var(--text-dark);margin-bottom:8px;font-size:15px}
+  .support a{display:flex;align-items:center;gap:9px;font-weight:700}
+  .social{display:flex;gap:10px;margin-top:12px;flex-wrap:wrap}
+  .social span{width:28px;height:28px;border:1px solid #2fa8dc;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#2fa8dc;font-weight:800;font-size:13px}
+  .rates{font-size:13px;color:#556371;margin-top:16px}.rates b{color:var(--text-dark)}
+  .footer-line{height:2px;background:#2fa8dc;margin:26px 0 18px}
+  .footer-bottom{display:flex;justify-content:space-between;gap:20px;align-items:center;flex-wrap:wrap;color:#6b7785;font-size:12px}
+  .badges{display:flex;align-items:center;gap:34px;flex-wrap:wrap}.badge{display:flex;align-items:center;gap:8px;color:#677482}.badge-logo{font-weight:800;color:#1d9bd1;font-size:24px;line-height:1}.hot-btn{position:fixed;right:24px;bottom:20px;background:#139bd4;color:#fff;border:8px solid rgba(19,155,212,.22);border-radius:50%;width:86px;height:86px;display:flex;align-items:center;justify-content:center;flex-direction:column;font-weight:800;box-shadow:0 12px 30px rgba(20,60,90,.25);z-index:90}.hot-btn span{font-size:26px;line-height:1}
+  @media (max-width:900px){.countries-menu{left:auto;right:0;transform:none;grid-template-columns:1fr;width:min(680px,calc(100vw - 24px))}.map-side{display:none}.footer-grid{grid-template-columns:repeat(2,1fr)}}
+  @media (max-width:560px){.countries-list{columns:1;max-height:230px}.footer-grid{grid-template-columns:1fr}.hot-btn{width:70px;height:70px;font-size:12px}}
+
+</style>
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="logo">
+        <span class="logo-main">Join<span class="accent">UP!</span></span>
+        <span class="logo-sub">мережа турагенцій</span>
+      </div>
+
+
+      <nav class="main-nav">
+        <div class="nav-dropdown">
+          <a href="#" class="nav-trigger">Країни</a>
+          <div class="countries-menu">
+            <ul class="countries-list">
+              <li><a class="country-link" href="#">Австрія</a><div class="country-info"><b>Австрія</b>Гірські курорти, озера, Відень і зручні екскурсійні маршрути.</div></li>
+              <li><a class="country-link" href="#">Албанія</a><div class="country-info"><b>Албанія</b>Море, невисокі ціни та спокійний пляжний відпочинок.</div></li>
+              <li><a class="country-link" href="#">Андорра</a><div class="country-info"><b>Андорра</b>Популярний напрямок для лижних турів і шопінгу.</div></li>
+              <li><a class="country-link" href="#">Болгарія</a><div class="country-info"><b>Болгарія</b>Сімейні курорти, піщані пляжі та доступні готелі.</div></li>
+              <li><a class="country-link" href="#">Великобританія</a><div class="country-info"><b>Великобританія</b>Лондон, історичні міста та насичені екскурсійні програми.</div></li>
+              <li><a class="country-link" href="#">Греція</a><div class="country-info"><b>Греція</b>Острови, чисте море, антична культура та готелі для сімей.</div></li>
+              <li><a class="country-link" href="#">Грузія</a><div class="country-info"><b>Грузія</b>Гори, гостинність, кухня та екскурсійні тури.</div></li>
+              <li><a class="country-link" href="#">Єгипет</a><div class="country-info"><b>Єгипет</b>Червоне море, all inclusive, дайвінг і відпочинок цілий рік.</div></li>
+              <li><a class="country-link" href="#">Іспанія</a><div class="country-info"><b>Іспанія</b>Коста-Брава, Барселона, острови та яскравий пляжний відпочинок.</div></li>
+              <li><a class="country-link" href="#">Італія</a><div class="country-info"><b>Італія</b>Рим, Венеція, узбережжя, гастрономія та екскурсії.</div></li>
+              <li><a class="country-link" href="#">Німеччина</a><div class="country-info"><b>Німеччина</b>Міські тури, музеї, замки та різдвяні ярмарки.</div></li>
+              <li><a class="country-link" href="#">Польща</a><div class="country-info"><b>Польща</b>Краків, Варшава, гори та короткі автобусні подорожі.</div></li>
+              <li><a class="country-link" href="#">Португалія</a><div class="country-info"><b>Португалія</b>Лісабон, Порту, океанські пляжі та регіон Алгарве.</div></li>
+              <li><a class="country-link" href="#">Словаччина</a><div class="country-info"><b>Словаччина</b>Татри, термальні комплекси та спокійний відпочинок.</div></li>
+              <li><a class="country-link" href="#">Туреччина</a><div class="country-info"><b>Туреччина</b>Анталія, Сіде, Кемер, all inclusive та багато сімейних готелів.</div></li>
+              <li><a class="country-link" href="#">Україна</a><div class="country-info"><b>Україна</b>Карпати, міські тури, санаторії та внутрішній туризм.</div></li>
+              <li><a class="country-link" href="#">Франція</a><div class="country-info"><b>Франція</b>Париж, Лазурний берег, музеї та романтичні екскурсії.</div></li>
+              <li><a class="country-link" href="#">Хорватія</a><div class="country-info"><b>Хорватія</b>Адріатичне море, острови, чисті пляжі та старі міста.</div></li>
+              <li><a class="country-link" href="#">Чехія</a><div class="country-info"><b>Чехія</b>Прага, замки, пивні маршрути та автобусні тури.</div></li>
+            </ul>
+            <div class="map-side">
+              <span class="region europe">Європа</span><span class="region na">Північна і Центральна Америка</span><span class="region caribbean">Кариби і Мексика</span><span class="region sa">Південна Америка</span><span class="region africa">Африка</span><span class="region asia">Азія</span><span class="region indian">Індійський океан</span><span class="region au">Австралія і Тихий океан</span>
+            </div>
+          </div>
+        </div>
+        <a href="tours.html">Тури</a>
+        <a href="#">Авіаквитки</a>
+        <a href="#">Додаткові послуги</a>
+        <a href="#">Блог</a>
+        <a href="#">Про нас</a>
+        <a href="#" class="nav-btn">Контакти</a>
+      </nav>
+
+      <div class="lang-switch">
+        <span title="Українська">🇺🇦</span>
+        <span title="Русский">🇷🇺</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <h1>400+млн. актуальних турів</h1>
+    <p>Порівняйте відразу сотні туристичних сайтів</p>
+    <p>Швидше знаходьте кращі пропозиції</p>
+    <button class="hero-btn" id="searchBtn">розпочни пошук</button>
+    <a class="hero-btn hero-link" href="tours.html">дивитися тури</a>
+  </section>
+
+  <!-- ===== FEATURES ===== -->
+  <section class="features">
+    <div class="features-inner">
+
+      <div class="feature">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="3" width="20" height="14" rx="2"></rect>
+            <line x1="8" y1="21" x2="16" y2="21"></line>
+            <line x1="12" y1="17" x2="12" y2="21"></line>
+          </svg>
+        </div>
+        <div>
+          <h3>Зручно</h3>
+          <p>Не потрібно використовувати десятки сайтів туроператорів</p>
+        </div>
+      </div>
+
+      <div class="feature">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="5" width="20" height="14" rx="2"></rect>
+            <line x1="2" y1="10" x2="22" y2="10"></line>
+          </svg>
+        </div>
+        <div>
+          <h3>Вигідно</h3>
+          <p>Прайс агрегатор підбере кращу пропозицію</p>
+        </div>
+      </div>
+
+      <div class="feature">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="11" width="18" height="11" rx="2"></rect>
+            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+          </svg>
+        </div>
+        <div>
+          <h3>Надійно</h3>
+          <p>Топова агенція Західної України з 8 річним досвідом</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== COUNTRIES ===== -->
+  <section class="countries">
+    <div class="countries-grid" id="countriesGrid">
+      <!-- картки країн генеруються через JavaScript -->
+    </div>
+  </section>
+
+  <!-- ===== MODAL З ІНФОРМАЦІЄЮ ПРО КРАЇНУ ===== -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal-box">
+      <img id="modalImg" src="" alt="">
+      <div class="modal-body">
+        <button class="modal-close" id="modalClose">&times;</button>
+        <h2 id="modalTitle"></h2>
+        <p id="modalInfo"></p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    /* =========================================================
+       1. Масив із 12 об'єктів країн
+       Кожен об'єкт містить: name (назва), flag (прапор),
+       cover (обкладинка), info (коротка інформація)
+       ========================================================= */
+    const countries = [
+      {
+        name: "Іспанія",
+        flag: "🇪🇸",
+        cover: "https://loremflickr.com/400/300/spain,coast",
+        info: "Іспанія приваблює сонячними пляжами Коста-Брави та Коста-Доради, мальовничими містами й смачною кухнею з паельєю та тапас. Тут чудово поєднуються пляжний відпочинок, екскурсії та яскраве нічне життя."
+      },
+      {
+        name: "Португалія",
+        flag: "🇵🇹",
+        cover: "https://loremflickr.com/400/300/portugal,lisbon",
+        info: "Португалія — країна затишних бруківкових вуличок, виноградників та океанських пляжів. Лісабон і Порту вражають архітектурою, а на півдні чекає сонячний регіон Алгарве з теплим морем."
+      },
+      {
+        name: "Греція",
+        flag: "🇬🇷",
+        cover: "https://loremflickr.com/400/300/greece,santorini",
+        info: "Греція — це тисячі островів з білими будиночками та синіми дахами, прозоре море й античні пам'ятки. Санторіні, Крит та Родос — улюблені напрямки для літнього відпочинку."
+      },
+      {
+        name: "Ізраїль",
+        flag: "🇮🇱",
+        cover: "https://loremflickr.com/400/300/israel,jerusalem",
+        info: "Ізраїль поєднує сучасний Тель-Авів, давній Єрусалим та цілющі води Мертвого моря. Це напрямок для тих, хто хоче поєднати пляжний відпочинок з культурним і релігійним туризмом."
+      },
+      {
+        name: "Туреччина",
+        flag: "🇹🇷",
+        cover: "https://loremflickr.com/400/300/turkey,antalya",
+        info: "Туреччина пропонує комфортні готелі за системою «все включено» на узбережжях Середземного й Егейського морів. Анталія, Бодрум та Стамбул підходять і для сімейного, і для активного відпочинку."
+      },
+      {
+        name: "Єгипет",
+        flag: "🇪🇬",
+        cover: "https://loremflickr.com/400/300/egypt,pyramids",
+        info: "Єгипет — це теплі води Червоного моря, дайвінг серед коралових рифів та легендарні піраміди Гізи. Шарм-ель-Шейх і Хургада популярні цілий рік завдяки м'якому клімату."
+      },
+      {
+        name: "Туніс",
+        flag: "🇹🇳",
+        cover: "https://loremflickr.com/400/300/tunisia,beach",
+        info: "Туніс приваблює піщаними пляжами, спа-готелями та колоритними медінами старих міст. Це бюджетний варіант якісного пляжного відпочинку на півночі Африки."
+      },
+      {
+        name: "Таїланд",
+        flag: "🇹🇭",
+        cover: "https://loremflickr.com/400/300/thailand,island",
+        info: "Таїланд — це тропічні острови, буддистські храми та смачна азійська кухня. Пхукет, Паттайя та Бангкок пропонують відпочинок на будь-який смак і бюджет."
+      },
+      {
+        name: "ОАЕ",
+        flag: "🇦🇪",
+        cover: "https://loremflickr.com/400/300/dubai,skyline",
+        info: "Об'єднані Арабські Емірати вражають хмарочосами Дубая, розкішними готелями та пустельними сафарі. Це напрямок для тих, хто шукає люксовий відпочинок і шопінг."
+      },
+      {
+        name: "Шрі Ланка",
+        flag: "🇱🇰",
+        cover: "https://loremflickr.com/400/300/srilanka,beach",
+        info: "Шрі Ланка — острів чаю, тропічних джунглів та диких слонів. Тут поєднуються пляжний відпочинок, екотуризм та знайомство з буддистською культурою."
+      },
+      {
+        name: "Індія",
+        flag: "🇮🇳",
+        cover: "https://loremflickr.com/400/300/india,tajmahal",
+        info: "Індія — країна контрастів: від Тадж-Махалу до пляжів Гоа. Тут можна поєднати екскурсійний тур з пляжним відпочинком і практиками йоги."
+      },
+      {
+        name: "Домініканська республіка",
+        flag: "🇩🇴",
+        cover: "https://loremflickr.com/400/300/dominicanrepublic,beach",
+        info: "Домініканська республіка славиться білосніжними пляжами Карибського моря та готелями «все включено» найвищого рівня. Це один із найкращих напрямків для далекого пляжного відпочинку."
+      }
+    ];
+
+    /* =========================================================
+       2. Функція, яка заповнює сторінку картками країн
+       ========================================================= */
+    function renderCountries(countriesArray, containerId) {
+      const container = document.getElementById(containerId);
+      container.innerHTML = "";
+
+      countriesArray.forEach((country, index) => {
+        const card = document.createElement("article");
+        card.className = "country-card";
+        card.style.animationDelay = (index * 0.05) + "s";
+
+        card.innerHTML = `
+          <img class="country-img" src="${country.cover}" alt="${country.name}" loading="lazy">
+          <div class="country-overlay">
+            <span class="country-name">${country.name}</span>
+            <span class="country-flag">${country.flag}</span>
+          </div>
+        `;
+
+        // клік по картці відкриває модальне вікно з інформацією про країну
+        card.addEventListener("click", () => openCountryModal(country));
+
+        container.appendChild(card);
+      });
+    }
+
+    /* =========================================================
+       3. Модальне вікно з короткою інформацією про країну
+       ========================================================= */
+    const modalOverlay = document.getElementById("modalOverlay");
+    const modalImg     = document.getElementById("modalImg");
+    const modalTitle   = document.getElementById("modalTitle");
+    const modalInfo    = document.getElementById("modalInfo");
+    const modalClose   = document.getElementById("modalClose");
+
+    function openCountryModal(country) {
+      modalImg.src   = country.cover;
+      modalImg.alt   = country.name;
+      modalTitle.textContent = country.name + " " + country.flag;
+      modalInfo.textContent  = country.info;
+      modalOverlay.classList.add("active");
+    }
+
+    function closeCountryModal() {
+      modalOverlay.classList.remove("active");
+    }
+
+    modalClose.addEventListener("click", closeCountryModal);
+
+    modalOverlay.addEventListener("click", (e) => {
+      if (e.target === modalOverlay) closeCountryModal();
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeCountryModal();
+    });
+
+    /* Кнопка "розпочни пошук" плавно прокручує до блоку з країнами */
+    document.getElementById("searchBtn").addEventListener("click", () => {
+      document.querySelector(".countries").scrollIntoView({ behavior: "smooth" });
+    });
+
+    /* Заповнюємо сторінку картками країн при завантаженні */
+    renderCountries(countries, "countriesGrid");
+  </script>
+
+
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer" id="contacts">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="tours.html">Тури</a>
+          <a href="#">Країни</a>
+          <a href="#">Круїзи</a>
+          <a href="#">Гарячі тури</a>
+          <a href="#">Контакти</a>
+        </div>
+        <div class="footer-col">
+          <a href="#">Квитки онлайн</a>
+          <a href="#">Блог</a>
+          <a href="#">Візова підтримка</a>
+          <a href="#">Страхування</a>
+          <a href="#">Подарунковий сертифікат</a>
+        </div>
+        <div class="footer-col">
+          <a href="#">Вакансії</a>
+          <a href="#">Корпоративним клієнтам</a>
+          <a href="#">Агентствам</a>
+          <a href="#">Про нас</a>
+          <a href="#">Політика конфіденційності</a>
+          <p class="rates"><b>Курс валют:</b><br>1 PLN = 8.20 UAH 1 EUR = 34.60 UAH</p>
+        </div>
+        <div class="footer-col support">
+          <div class="footer-title">Підтримка клієнтів</div>
+          <a href="tel:+380674463303">☎ (067) 446-33-03</a>
+          <a href="tel:+380674463305">☏ (067) 446-33-05</a>
+          <a href="mailto:tour@joinup.ua">✉ tour@joinup.ua</a>
+          <div class="social"><span>✈</span><span>f</span><span>◎</span><span>▶</span><span>v</span></div>
+        </div>
+      </div>
+      <div class="footer-line"></div>
+      <div class="footer-bottom">
+        <div class="badges">
+          <div class="badge"><span class="badge-logo">IATA</span><span>Акредитований член<br>міжнародної асоціації</span></div>
+          <div class="badge"><span class="badge-logo">ITAKA</span><span>Генеральний представник<br>в Україні</span></div>
+          <div class="badge"><span class="badge-logo">XCLUSIVE</span><span>Travel</span></div>
+        </div>
+        <div>Всі права застережені. Туристична фірма JoinUP!</div>
+      </div>
+    </div>
+  </footer>
+  <div class="hot-btn"><span>🔍</span>Гарячі</div>
+
+</body>
+</html>
