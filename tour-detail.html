@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Throne Beach Resort & Spa 5* — деталі туру</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+
+  :root{--text-dark:#283643;--text-gray:#6b7785;--accent-blue:#2f80c4;--teal:#1f8fa6;--gold:#f6b31c;--bg-light:#eef3f6;--line:#d8e0e6;--card:#fff;--shadow:0 6px 18px rgba(20,40,60,.10)}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Open Sans',Arial,sans-serif;background:var(--bg-light);color:var(--text-dark);line-height:1.45}
+  h1,h2,h3,.logo-main{font-family:'Montserrat',Arial,sans-serif}
+  .site-header{background:#fff;box-shadow:0 2px 10px rgba(20,40,60,0.08);position:sticky;top:0;z-index:10}
+  .header-inner{max-width:1180px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+  .logo{display:flex;flex-direction:column;line-height:1.1;text-decoration:none}.logo-main{font-size:24px;font-weight:800;color:var(--text-dark)}.logo-main .accent{color:var(--accent-blue)}.logo-sub{font-size:11px;color:var(--text-gray);letter-spacing:.5px}
+  .main-nav{display:flex;align-items:center;gap:28px;flex-wrap:wrap}.main-nav a{text-decoration:none;color:var(--text-dark);font-size:15px;font-weight:600}.main-nav a:hover,.main-nav a.active{color:var(--accent-blue)}.nav-btn{background:var(--accent-blue);color:#fff!important;padding:10px 22px;border-radius:4px}.lang-switch{display:flex;gap:10px;font-size:20px}
+  .detail-wrap{max-width:1180px;margin:0 auto;padding:24px 24px 44px}.breadcrumbs{font-size:13px;color:#7a8792;margin-bottom:14px}.breadcrumbs a{color:#2f80c4;text-decoration:none}
+  .tour-detail-card{background:#fff;box-shadow:var(--shadow);border:1px solid var(--line);display:grid;grid-template-columns:minmax(420px,1fr) 315px;position:relative;overflow:hidden}.tour-photo{min-height:335px;background:linear-gradient(rgba(20,30,45,.25),rgba(20,30,45,.25)),url('https://loremflickr.com/900/520/hotel,beach,resort?lock=31') center/cover no-repeat;position:relative}.photo-title{position:absolute;left:18px;bottom:24px;color:#fff;text-shadow:0 2px 8px rgba(0,0,0,.45)}.photo-title h1{font-size:27px;margin-bottom:4px}.photo-title p{font-size:14px}
+  .side-box{background:#f7f8fb;border-left:1px solid var(--line);padding:18px 18px 20px;position:relative}.close-x{position:absolute;top:0;right:0;width:32px;height:32px;background:#f6b31c;color:#fff;text-align:center;line-height:32px;font-weight:800;text-decoration:none}.id-row{font-size:12px;color:#66717d;margin-bottom:8px}.price-row{display:flex;align-items:flex-end;gap:7px;margin:14px 0}.price-row .price{font-size:30px;font-weight:800;color:#109bd2;font-family:Montserrat}.price-row span{font-size:12px;font-weight:700;color:#40505c}.heart{position:absolute;right:18px;top:72px;font-size:31px;color:#bcc6cf}.tour-facts{font-size:13px;color:#2e3d49;border-top:1px solid var(--line);padding-top:12px}.tour-facts p{margin:7px 0}.icons{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:13px 0}.icon-box{background:#fff;border:1px solid var(--line);text-align:center;padding:8px 4px;font-size:12px;color:#66717d}.icon-box b{display:block;color:#149bd2;font-size:20px}.flight-select{width:100%;height:34px;border:1px solid var(--line);margin-top:8px;color:#455563;padding:0 8px;background:#fff}
+  .tabs{display:flex;background:#fff;border-left:1px solid var(--line);border-right:1px solid var(--line);border-bottom:1px solid var(--line)}.tab{padding:13px 22px;font-size:12px;font-weight:800;color:#7b8793;border-right:1px solid var(--line);text-transform:uppercase}.tab.active{color:#1e9bd0;border-bottom:3px solid #1e9bd0;background:#fff}
+  .info-block{background:#fff;border:1px solid var(--line);border-top:0;padding:20px 24px;margin-bottom:24px}.rating-line{display:flex;align-items:center;gap:18px;margin-bottom:16px;font-size:14px}.rating-bars{display:flex;gap:3px}.rating-bars span{display:block;width:15px;height:12px;background:#ddd}.rating-bars span:nth-child(-n+2){background:#ff7a00}.rating-bars span:nth-child(n+3):nth-child(-n+6){background:#f4d21f}.rating-bars span:nth-child(n+7):nth-child(-n+9){background:#65aa2d}.rating-bars span:nth-child(n+10){background:#dbe1e5}.info-row{display:grid;grid-template-columns:140px 1fr;gap:20px;border-top:1px solid #edf1f4;padding:10px 0;font-size:14px}.info-row b{color:#596674}.info-row p,.info-row a{color:#2d3b47}.info-row a{color:#2f80c4;text-decoration:none}
+  .request-section{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start}.request-form,.notice{background:#fff;border:1px solid var(--line);padding:20px}.request-form h2,.notice h2{font-size:17px;margin-bottom:14px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.field{margin-bottom:12px}.field.full{grid-column:1/-1}.field input,.field textarea{width:100%;border:1px solid var(--line);background:#eef3f6;height:42px;padding:0 12px;font:inherit}.field textarea{height:105px;padding-top:11px;resize:vertical}.error{display:none;color:#d43c2f;font-size:12px;margin-top:4px}.field.invalid .error{display:block}.field.invalid input,.field.invalid textarea{border-color:#d43c2f;background:#fff8f8}.agree{font-size:12px;color:#5d6874;margin:8px 0 14px}.submit-btn{height:44px;border:0;background:#f6b31c;color:#fff;font-weight:800;text-transform:uppercase;padding:0 24px;cursor:pointer}.success{display:none;color:#168a45;font-weight:700;margin-top:10px}.notice{font-size:13px;color:#3d4c58}.notice p{margin-bottom:11px}.notice b{color:#1e2d3a}
+  @media(max-width:850px){.tour-detail-card{grid-template-columns:1fr}.side-box{border-left:0}.request-section{grid-template-columns:1fr}.form-grid{grid-template-columns:1fr}.tabs{overflow:auto}.tab{white-space:nowrap}.info-row{grid-template-columns:1fr;gap:4px}.photo-title h1{font-size:22px}}
+
+  /* ===== COUNTRIES DROPDOWN ===== */
+  .nav-dropdown{position:relative;padding:18px 0;margin:-18px 0}
+  .nav-trigger{display:inline-flex;align-items:center;gap:6px;cursor:pointer}
+  .nav-trigger::after{content:"▾";font-size:11px;color:var(--text-gray)}
+  .countries-menu{
+    position:absolute;top:100%;left:50%;transform:translateX(-50%);
+    width:min(920px, calc(100vw - 40px));background:#fff;border:1px solid #e5ebf0;
+    box-shadow:0 18px 45px rgba(25,45,70,.18);padding:26px 28px;display:none;z-index:150;
+    grid-template-columns:250px 1fr;gap:34px;min-height:320px
+  }
+  .nav-dropdown:hover .countries-menu{display:grid}
+  .countries-list{columns:2;column-gap:28px;list-style:none;max-height:270px;overflow:auto;padding-right:12px;border-right:3px solid #56616e}
+  .countries-list li{break-inside:avoid;margin-bottom:9px}
+  .country-link{font-size:14px;text-transform:uppercase;color:#4d5966!important;text-decoration:none;display:block;padding:2px 0}
+  .country-link:hover{color:var(--accent-blue)!important;font-weight:700}
+  .map-side{position:relative;min-height:260px;background:radial-gradient(circle at 62% 45%, rgba(47,128,196,.08), transparent 32%), url('https://upload.wikimedia.org/wikipedia/commons/8/80/World_map_-_low_resolution.svg') center/contain no-repeat;opacity:.9}
+  .region{position:absolute;font-size:14px;color:#5f6872;font-weight:600}
+  .region.europe{top:28px;left:48%;color:var(--accent-blue)}
+  .region.na{top:58px;left:16%}.region.caribbean{top:115px;left:23%}.region.sa{bottom:52px;left:29%}.region.africa{top:120px;left:52%}.region.asia{top:92px;right:20%}.region.indian{bottom:52px;right:19%}.region.au{bottom:22px;right:8%}
+  .country-info{display:none;position:absolute;left:0;right:0;bottom:0;background:rgba(255,255,255,.92);border-left:4px solid var(--accent-blue);padding:12px 14px;box-shadow:0 8px 24px rgba(20,40,60,.12);font-size:13px;color:var(--text-gray)}
+  .country-info b{display:block;color:var(--text-dark);font-size:15px;margin-bottom:4px}
+  .countries-list li:hover .country-info{display:block}
+
+  /* ===== FOOTER ===== */
+  .site-footer{background:#fff;border-top:1px solid #e2e8ee;margin-top:0}
+  .footer-inner{max-width:1180px;margin:0 auto;padding:34px 24px 22px}
+  .footer-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:34px;align-items:start}
+  .footer-col a,.footer-col p{display:block;color:#4f5d6b;text-decoration:none;font-size:14px;margin:5px 0}
+  .footer-col a:hover{color:var(--accent-blue)}
+  .footer-title{font-weight:800;color:var(--text-dark);margin-bottom:8px;font-size:15px}
+  .support a{display:flex;align-items:center;gap:9px;font-weight:700}
+  .social{display:flex;gap:10px;margin-top:12px;flex-wrap:wrap}
+  .social span{width:28px;height:28px;border:1px solid #2fa8dc;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#2fa8dc;font-weight:800;font-size:13px}
+  .rates{font-size:13px;color:#556371;margin-top:16px}.rates b{color:var(--text-dark)}
+  .footer-line{height:2px;background:#2fa8dc;margin:26px 0 18px}
+  .footer-bottom{display:flex;justify-content:space-between;gap:20px;align-items:center;flex-wrap:wrap;color:#6b7785;font-size:12px}
+  .badges{display:flex;align-items:center;gap:34px;flex-wrap:wrap}.badge{display:flex;align-items:center;gap:8px;color:#677482}.badge-logo{font-weight:800;color:#1d9bd1;font-size:24px;line-height:1}.hot-btn{position:fixed;right:24px;bottom:20px;background:#139bd4;color:#fff;border:8px solid rgba(19,155,212,.22);border-radius:50%;width:86px;height:86px;display:flex;align-items:center;justify-content:center;flex-direction:column;font-weight:800;box-shadow:0 12px 30px rgba(20,60,90,.25);z-index:90}.hot-btn span{font-size:26px;line-height:1}
+  @media (max-width:900px){.countries-menu{left:auto;right:0;transform:none;grid-template-columns:1fr;width:min(680px,calc(100vw - 24px))}.map-side{display:none}.footer-grid{grid-template-columns:repeat(2,1fr)}}
+  @media (max-width:560px){.countries-list{columns:1;max-height:230px}.footer-grid{grid-template-columns:1fr}.hot-btn{width:70px;height:70px;font-size:12px}}
+
+
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="logo" href="index.html"><span class="logo-main">Join<span class="accent">UP!</span></span><span class="logo-sub">мережа турагенцій</span></a>
+
+    <nav class="main-nav">
+        <div class="nav-dropdown">
+          <a href="#" class="nav-trigger">Країни</a>
+          <div class="countries-menu">
+            <ul class="countries-list">
+              <li><a class="country-link" href="#">Австрія</a><div class="country-info"><b>Австрія</b>Гірські курорти, озера, Відень і зручні екскурсійні маршрути.</div></li>
+              <li><a class="country-link" href="#">Албанія</a><div class="country-info"><b>Албанія</b>Море, невисокі ціни та спокійний пляжний відпочинок.</div></li>
+              <li><a class="country-link" href="#">Андорра</a><div class="country-info"><b>Андорра</b>Популярний напрямок для лижних турів і шопінгу.</div></li>
+              <li><a class="country-link" href="#">Болгарія</a><div class="country-info"><b>Болгарія</b>Сімейні курорти, піщані пляжі та доступні готелі.</div></li>
+              <li><a class="country-link" href="#">Великобританія</a><div class="country-info"><b>Великобританія</b>Лондон, історичні міста та насичені екскурсійні програми.</div></li>
+              <li><a class="country-link" href="#">Греція</a><div class="country-info"><b>Греція</b>Острови, чисте море, антична культура та готелі для сімей.</div></li>
+              <li><a class="country-link" href="#">Грузія</a><div class="country-info"><b>Грузія</b>Гори, гостинність, кухня та екскурсійні тури.</div></li>
+              <li><a class="country-link" href="#">Єгипет</a><div class="country-info"><b>Єгипет</b>Червоне море, all inclusive, дайвінг і відпочинок цілий рік.</div></li>
+              <li><a class="country-link" href="#">Іспанія</a><div class="country-info"><b>Іспанія</b>Коста-Брава, Барселона, острови та яскравий пляжний відпочинок.</div></li>
+              <li><a class="country-link" href="#">Італія</a><div class="country-info"><b>Італія</b>Рим, Венеція, узбережжя, гастрономія та екскурсії.</div></li>
+              <li><a class="country-link" href="#">Німеччина</a><div class="country-info"><b>Німеччина</b>Міські тури, музеї, замки та різдвяні ярмарки.</div></li>
+              <li><a class="country-link" href="#">Польща</a><div class="country-info"><b>Польща</b>Краків, Варшава, гори та короткі автобусні подорожі.</div></li>
+              <li><a class="country-link" href="#">Португалія</a><div class="country-info"><b>Португалія</b>Лісабон, Порту, океанські пляжі та регіон Алгарве.</div></li>
+              <li><a class="country-link" href="#">Словаччина</a><div class="country-info"><b>Словаччина</b>Татри, термальні комплекси та спокійний відпочинок.</div></li>
+              <li><a class="country-link" href="#">Туреччина</a><div class="country-info"><b>Туреччина</b>Анталія, Сіде, Кемер, all inclusive та багато сімейних готелів.</div></li>
+              <li><a class="country-link" href="#">Україна</a><div class="country-info"><b>Україна</b>Карпати, міські тури, санаторії та внутрішній туризм.</div></li>
+              <li><a class="country-link" href="#">Франція</a><div class="country-info"><b>Франція</b>Париж, Лазурний берег, музеї та романтичні екскурсії.</div></li>
+              <li><a class="country-link" href="#">Хорватія</a><div class="country-info"><b>Хорватія</b>Адріатичне море, острови, чисті пляжі та старі міста.</div></li>
+              <li><a class="country-link" href="#">Чехія</a><div class="country-info"><b>Чехія</b>Прага, замки, пивні маршрути та автобусні тури.</div></li>
+            </ul>
+            <div class="map-side">
+              <span class="region europe">Європа</span><span class="region na">Північна і Центральна Америка</span><span class="region caribbean">Кариби і Мексика</span><span class="region sa">Південна Америка</span><span class="region africa">Африка</span><span class="region asia">Азія</span><span class="region indian">Індійський океан</span><span class="region au">Австралія і Тихий океан</span>
+            </div>
+          </div>
+        </div>
+        <a href="tours.html">Тури</a>
+        <a href="#">Авіаквитки</a>
+        <a href="#">Додаткові послуги</a>
+        <a href="#">Блог</a>
+        <a href="#">Про нас</a>
+        <a href="#" class="nav-btn">Контакти</a>
+    </nav>
+    <div class="lang-switch"><span>🇺🇦</span><span>🇷🇺</span></div>
+  </div>
+</header>
+
+
+<main class="detail-wrap">
+  <div class="breadcrumbs"><a href="index.html">Головна</a> / <a href="tours.html">Тури</a> / Throne Beach Resort & Spa 5*</div>
+  <section class="tour-detail-card">
+    <div class="tour-photo"><div class="photo-title"><h1>Throne Beach Resort & Spa 5*</h1><p>Сіде, Туреччина</p></div></div>
+    <aside class="side-box">
+      <a class="close-x" href="tours.html">×</a>
+      <div class="id-row">ID туру: 950193<br><span style="color:#e46b58">Немає місць на перельоті</span></div>
+      <div class="price-row"><div class="price">521€</div><span>за всіх</span></div><div class="heart">♡</div>
+      <div class="tour-facts">
+        <p><b>Виліт:</b> 11.07.2021 р. <b>на 6 ночей</b></p><p><b>Приліт:</b> 17.07.2021</p><p>Тип номера: <b>Annex Eco Room Without Balcony</b></p>
+      </div>
+      <div class="icons"><div class="icon-box"><b>✈</b>3 клас</div><div class="icon-box"><b>AI</b>харчування</div><div class="icon-box"><b>👥</b>розміщення</div></div>
+      <select class="flight-select"><option>03:40 Київ (KBP) - 06:10 Анталія (AYT)</option></select><select class="flight-select"><option>07:45 Анталія (AYT) - 10:15 Київ (KBP)</option></select>
+    </aside>
+  </section>
+  <div class="tabs"><div class="tab active">Огляд</div><div class="tab">Послуги</div><div class="tab">Фото</div><div class="tab">Мапа</div><div class="tab">Відгуки</div><div class="tab">Інші тури в готель</div></div>
+  <section class="info-block">
+    <div class="rating-line"><b>Рейтинг:</b><strong>7.7/10</strong><div class="rating-bars"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div></div>
+    <div class="info-row"><b>Сайт готелю</b><a href="#">http://thronebeachresort.com/</a></div>
+    <div class="info-row"><b>Телефон</b><p>+90 242 777 02 77</p></div>
+    <div class="info-row"><b>Адреса</b><p>Side, Turkey. Перша лінія біля моря, власний пляж, басейни, ресторан, бари та зона відпочинку.</p></div>
+    <div class="info-row"><b>Спорт</b><p>Аквааеробіка, водне поло, пляжний волейбол, настільний теніс, фітнес, анімація та вечірні програми.</p></div>
+  </section>
+  <section class="request-section">
+    <form class="request-form" id="requestForm" novalidate>
+      <h2>Відправити запит</h2>
+      <div class="form-grid">
+        <div class="field" data-field="phone"><input id="phone" type="tel" placeholder="+38 (xxx) xxx xx xx"><div class="error">Введіть телефон у форматі +38 (099) 123 45 67</div></div>
+        <div class="field" data-field="email"><input id="email" type="email" placeholder="E-mail"><div class="error">Введіть коректну пошту</div></div>
+        <div class="field full" data-field="message"><textarea id="message" placeholder="Ваше повідомлення"></textarea><div class="error">Повідомлення має містити мінімум 10 символів</div></div>
+      </div>
+      <label class="agree"><input id="agree" type="checkbox"> Даю згоду на обробку персональних даних</label>
+      <button class="submit-btn" type="submit">Відправити запит</button><div class="success" id="successMsg">Заявку успішно відправлено!</div>
+    </form>
+    <div class="notice"><h2>Зверніть увагу:</h2><p>1. У оператора з даного туру можливі доплати за вибір рейсу, оформлення страховки, святкові вечері та інші додаткові послуги.</p><p>2. Ціна туру актуальна на момент перегляду сторінки.</p><p>3. Розрахунок проводиться в національній валюті по курсу туристичного оператора.</p><p><b>Для уточнення інформації зв'яжеться з нашим менеджером — ми зв'яжемо всі деталі бронювання даної пропозиції.</b></p></div>
+  </section>
+</main>
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer" id="contacts">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="tours.html">Тури</a>
+          <a href="#">Країни</a>
+          <a href="#">Круїзи</a>
+          <a href="#">Гарячі тури</a>
+          <a href="#">Контакти</a>
+        </div>
+        <div class="footer-col">
+          <a href="#">Квитки онлайн</a>
+          <a href="#">Блог</a>
+          <a href="#">Візова підтримка</a>
+          <a href="#">Страхування</a>
+          <a href="#">Подарунковий сертифікат</a>
+        </div>
+        <div class="footer-col">
+          <a href="#">Вакансії</a>
+          <a href="#">Корпоративним клієнтам</a>
+          <a href="#">Агентствам</a>
+          <a href="#">Про нас</a>
+          <a href="#">Політика конфіденційності</a>
+          <p class="rates"><b>Курс валют:</b><br>1 PLN = 8.20 UAH 1 EUR = 34.60 UAH</p>
+        </div>
+        <div class="footer-col support">
+          <div class="footer-title">Підтримка клієнтів</div>
+          <a href="tel:+380674463303">☎ (067) 446-33-03</a>
+          <a href="tel:+380674463305">☏ (067) 446-33-05</a>
+          <a href="mailto:tour@joinup.ua">✉ tour@joinup.ua</a>
+          <div class="social"><span>✈</span><span>f</span><span>◎</span><span>▶</span><span>v</span></div>
+        </div>
+      </div>
+      <div class="footer-line"></div>
+      <div class="footer-bottom">
+        <div class="badges">
+          <div class="badge"><span class="badge-logo">IATA</span><span>Акредитований член<br>міжнародної асоціації</span></div>
+          <div class="badge"><span class="badge-logo">ITAKA</span><span>Генеральний представник<br>в Україні</span></div>
+          <div class="badge"><span class="badge-logo">XCLUSIVE</span><span>Travel</span></div>
+        </div>
+        <div>Всі права застережені. Туристична фірма JoinUP!</div>
+      </div>
+    </div>
+  </footer>
+  <div class="hot-btn"><span>🔍</span>Гарячі</div>
+
+
+<script>
+const form=document.getElementById('requestForm');
+const phone=document.getElementById('phone'), email=document.getElementById('email'), message=document.getElementById('message'), agree=document.getElementById('agree');
+function setInvalid(el, bad){el.closest('.field')?.classList.toggle('invalid', bad)}
+form.addEventListener('submit', e=>{
+  e.preventDefault();
+  const phoneOk=/^\+?38\s?\(?0\d{2}\)?\s?\d{3}\s?\d{2}\s?\d{2}$/.test(phone.value.trim());
+  const emailOk=/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim());
+  const msgOk=message.value.trim().length>=10;
+  setInvalid(phone,!phoneOk); setInvalid(email,!emailOk); setInvalid(message,!msgOk);
+  if(!agree.checked){alert('Потрібно дати згоду на обробку персональних даних');return}
+  if(phoneOk&&emailOk&&msgOk){document.getElementById('successMsg').style.display='block';form.reset();}
+});
+</script>
+</body></html>
